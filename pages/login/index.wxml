@@ -9,12 +9,12 @@
   <form bindsubmit="formSubmit">
     <view class="cu-form-group margin-top">
       <view class="title">用户名</view>
-      <input placeholder="请输入用户名"></input>
+      <input placeholder="请输入用户名" name="mobile" value=''></input>
     </view>
 
     <view class="cu-form-group">
       <view class="title">密码</view>
-      <input type="safe-password" password="true" placeholder="请输入密码"></input>
+      <input type="safe-password" password="true" placeholder="请输入密码" name="password" value=''></input>
     </view>
 
     <!-- 按钮 -->
