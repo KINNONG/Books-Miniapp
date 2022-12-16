@@ -1,0 +1,53 @@
+/* pages/deposit/index.wxss */
+
+.money{
+  font-size: 42rpx;
+  font-weight: bold;
+  justify-content: space-between;
+  margin-bottom: 20rpx;
+  padding: 40rpx 20rpx 40rpx 20rpx;
+  background: #fff
+}
+
+.info{
+  background: #fff;
+  padding: 20rpx;
+}
+
+.info .title{
+  font-size: 36rpx;
+  font-weight: bold;
+  display: inline
+}
+
+.info text{
+  font-size: 32rpx;
+}
+
+.foot{
+  justify-content: space-between;
+  padding: 40rpx 20rpx 40rpx 20rpx;
+  align-items: center;
+  background: #eee
+}
+
+.foot button{
+  width: 280rpx;
+  color: white;
+  background: #1aad19
+}
+
+.foot .total{
+  flex: 1;
+  font-size: 36rpx;
+  text-align: left;
+  color: #515151
+}
+
+.weui-footer_fixed-bottom{
+  bottom: 0;
+}
+
+.content {
+  font-size: 30rpx;
+}

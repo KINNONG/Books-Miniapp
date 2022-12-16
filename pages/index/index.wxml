@@ -1,0 +1,98 @@
+<!--index.wxml-->
+<import src="/pages/template/common/copyright.wxml" />
+<!-- 全屏背景图 -->
+<image src='/images/bg.png' mode='widthFix' class='bg-img-new'></image>
+
+<!-- 页面 -->
+<scroll-view scroll-y class="scrollPage cu-timeline">
+  <!-- 滚动图片 -->
+  <swiper class="card-swiper square-dot" indicator-dots="true" circular="true" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" bindchange="cardSwiper" previousMargin="0.01rpx" indicator-color="#8799a3" indicator-active-color="#0081ff" style='margin-top: {{StatusBar + CustomBar}}rpx;'>
+    <swiper-item wx:for="{{bannerList}}" wx:key="index" class="{{cardCur==index?'cur':''}}">
+      <view class="swiper-item">
+        <view class="bg-img radius-lg" data-id="{{item.link}}" style="background-image: url({{item.picUrl}});height: 360rpx;">
+          <view class="padding-xl text-white">
+            <view class="padding-xs text-xl">
+              {{item.title}}
+            </view>
+            <view class="padding-xs">
+              {{item.des}}
+            </view>
+          </view>
+        </view>
+        <!-- <image src="{{item.url}}" mode="aspectFill" wx:if="{{item.type=='image'}}"></image> -->
+        <video src="{{item.url}}" autoplay loop muted show-play-btn="{{false}}" controls="{{false}}" objectFit="cover" wx:if="{{item.type=='video'}}"></video>
+      </view>
+    </swiper-item>
+  </swiper>
+
+  <!-- 图书页面 -->
+  <view class="box">
+    <!-- 搜索框 -->
+    <view class="cu-bar search bg-white">
+      <view class="search-form round">
+        <text class="cuIcon-search"></text>
+        <input type="text" placeholder="搜索图书、文章" confirm-type="search" value="{{inputVal}}" focus="{{inputShowed}}" bindinput="inputTyping" bindconfirm="search"></input>
+        <view class="action" wx:if="{{inputVal.length > 0}}" bindtap="clearInput">
+          <!-- <text class="cuIcon-close"></text> -->
+          <text class="text-red text-shadow">取消</text>
+        </view>
+      </view>
+    </view>
+    <!-- 图书列表 -->
+    <view>
+      <!-- 图书列表操作条 -->
+      <view class="cu-bar bg-white">
+        <view class="action">
+          <text class="cuIcon-titles text-blue"></text>
+          <text>图书列表</text>
+        </view>
+      </view>
+      <!-- 图书列表 -->
+      <view class="container-waterfall bg-white">
+        <view class="left">
+          <view class="flow">
+            <view class="cu-card case no-card " wx:for="{{leftData}}" wx:key="index">
+              <view class="cu-item">
+                <view class="image">
+                  <navigator url="../book/book-detail/index?id={{item.id}}">
+                    <view class="bg-img bg-mask flex align-end" style="background-image: url({{item.picUrl}});height: {{leftData[index].height}}rpx;">
+                      <view class="bg-shadeBottom padding padding-top-xl flex-sub">
+                        {{item.bookName}}
+                        <view class="text-xs padding-top-xl">
+                          作者：{{item.author}}
+                        </view>
+                      </view>
+                    </view>
+                  </navigator>
+                </view>
+              </view>
+            </view>
+          </view>
+        </view>
+
+        <view class="right">
+          <view class="flow">
+            <view class="cu-card case no-card" wx:for="{{rightData}}" wx:key="index">
+              <view class="cu-item">
+                <view class="image">
+                  <navigator url="../book/book-detail/index?id={{item.id}}">
+                    <view class="bg-img bg-mask flex align-end" style="background-image: url({{item.picUrl}});height: {{rightData[index].height}}rpx;">
+                      <view class="bg-shadeBottom padding padding-top-xl flex-sub">
+                        {{item.bookName}}
+                        <view class="text-xs padding-top-xl">
+                          作者：{{item.author}}
+                        </view>
+                      </view>
+                    </view>
+                  </navigator>
+                </view>
+              </view>
+            </view>
+          </view>
+        </view>
+      </view>
+
+    </view>
+  </view>
+</scroll-view>
+<template is="copyright"></template>

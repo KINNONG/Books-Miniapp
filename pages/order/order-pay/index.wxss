@@ -1,0 +1,17 @@
+/* pages/order/order-pay/index.wxss */
+page{
+  height: 100%
+}
+
+.container{
+  padding: 20rpx;
+}
+
+image{
+  width: 500rpx;
+  margin: 0 auto;
+}
+
+.price{
+  text-align: center
+}

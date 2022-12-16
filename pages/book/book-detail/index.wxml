@@ -1,0 +1,72 @@
+<import src="/pages/template/common/copyright"></import>
+
+<cu-custom bgColor="bg-gradual-blue" isBack="{{true}}">
+  <view slot="backText"></view>
+  <view slot="content">图书详情</view>
+</cu-custom>
+
+<scroll-view scroll-y class="scrollPage">
+  <view class="container">
+    <view class="book">
+      <image class='' mode="aspectFit" src='{{book.picUrl}}'></image>
+      <view class='weui-flex__item book-info'>
+        <view class='weui-flex stock'>
+          <view class="weui-flex__item book-title">{{book.bookName}}</view>
+          <view class='book-stock'>剩余{{book.stock}}本</view>
+        </view>
+        <view class='book-title-en'></view>
+        <view class='book-item'>作者：{{book.author}}</view>
+        <view class='book-item'>出版社：{{book.press}}</view>
+      </view>
+    </view>
+    <view class="block">
+      <view class='title'>内容简介</view>
+      <view class="empty" hidden="{{book.describe.length >0}}">
+        <text class="cuIcon-searchlist text-gray icon"></text>
+        <view class="text-gray text">暂无内容简介</view>
+      </view>
+      <view class="book-info" hidden="{{book.describe == null?true:false}}">
+        <text class="padding-sm text-df">{{book.describe}}</text>
+      </view>
+    </view>
+
+    <view class="block">
+      <view class="weui-flex" style="align-items: center">
+        <view class='weui-flex__item title'>评价</view>
+      </view>
+      <view class='book-info'>
+        <view class="empty" hidden="{{evaluationList.length !=0}}">
+          <text class="cuIcon-comment text-gray icon"></text>
+          <view class="text-gray text">暂无评价</view>
+        </view>
+        <view class='list-item' wx:for="{{evaluationList}}" wx:key="index">
+          <view class='weui-flex user-info'>
+            <image src='{{item.member.avatarUrl}}'></image>
+            <view class="info">
+              <view class='nick-name'>{{item.member.nickName}}</view>
+              <view class='create-time'>{{item.createTime}}</view>
+            </view>
+          </view>
+          <view class='content' hidden="{{evaluationList.length > 0 ? false: true}}">
+            {{item.content}}
+          </view>
+
+        </view>
+      </view>
+    </view>
+
+    <view class="footer-box flex justify-between">
+      <view class="shop-cart-btn" bindtap="goBookshelf">
+        <view class="shop-num">({{bookNum}})</view>
+        <view class='shop-name'>书架</view>
+      </view>
+      <view class="flex text-center text-xl">
+        <view class="bg-orange padding text-center" bindtap="addBookshelf" data-id='{{book.id}}'>加入书架</view>
+        <view class="bg-cyan[p';---------] padding" bindtap="tobuy" data-id='{{book.id}}'>我要借阅</view>
+
+      </view>
+    </view>
+  </view>
+</scroll-view>
+
+<template is="copyright"></template>

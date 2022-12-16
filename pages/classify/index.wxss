@@ -1,0 +1,155 @@
+
+.weui-grids {
+  border-top: none;
+  border-left: none;
+}
+
+.weui-grid .weui-grid__label {
+  font-size: 24rpx;
+  margin-top: 0px;
+  border: solid 1rpx #e64340;
+  border-radius: 12rpx;
+  padding: 10rpx;
+}
+
+.book-item {
+  border-bottom: 1rpx solid #eee;
+  padding: 20rpx;
+  align-items: center;
+  background-color: #fff;
+}
+
+.book-item image {
+  width: 160rpx;
+  height: 200rpx;
+  margin-right: 10rpx;
+}
+
+.book-title {
+  font-size: 32rpx;
+}
+
+.flex-line {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 4rpx;
+}
+
+.stock {
+  font-size: 30rpx;
+  color: #ef8203;
+}
+
+.category {
+  background: #fff;
+  border-bottom: 1rpx solid #eee;
+}
+
+picker {
+  width: 300rpx;
+  font-size: 26rpx;
+  padding-top: 8rpx;
+  padding-bottom: 8rpx;
+  text-align: center;
+}
+
+.book-title-en {
+  font-size: 32rpx;
+  color: #888;
+}
+
+.author {
+  font-size: 28rpx;
+  color: #888;
+}
+
+.describe {
+  font-size: 24rpx;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+}
+
+.select {
+  justify-content: center;
+  align-items: center;
+}
+
+.select image {
+  width: 22rpx;
+  height: 22rpx;
+}
+
+.c_name {
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.weui-tab{
+  display: flex
+}
+
+.weui-navbar{
+  display: block;
+  width: 180rpx;
+  position: static;
+  border: none
+}
+
+.weui-navbar__item.weui-bar__item_on{
+  color: #00BFE0
+}
+
+.weui-grid__label{
+  width: 200rpx;
+  text-align: left;
+  margin: 0 auto;
+}
+
+.weui-bar__item_on{
+  border-left: 6rpx solid #00BFE0;
+  background: #FFFFFF
+}
+
+/* pages/index/plugin/verticalnav/verticalnav.wxss */
+.VerticalNav.nav {
+  width: 200rpx;
+  white-space: initial;
+}
+
+.VerticalNav.nav .cu-item {
+  width: 100%;
+  text-align: center;
+  /* background-color: #fff; */
+  margin: 0;
+  border: none;
+  height: 50px;
+  position: relative;
+}
+
+.VerticalNav.nav .cu-item.cur {
+  background-color: #f1f1f1;
+}
+
+.VerticalNav.nav .cu-item.cur::after {
+  content: "";
+  width: 8rpx;
+  height: 30rpx;
+  border-radius: 10rpx 0 0 10rpx;
+  position: absolute;
+  background-color: currentColor;
+  top: 0;
+  right: 0rpx;
+  bottom: 0;
+  margin: auto;
+}
+
+.VerticalBox {
+  display: flex;
+}
+
+.VerticalMain {
+  background-color: #f1f1f1;
+}

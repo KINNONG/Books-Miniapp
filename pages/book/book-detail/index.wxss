@@ -1,0 +1,258 @@
+.container {
+  background-color: #f7f7f7;
+  min-height: 100%;
+  padding-bottom: 100rpx;
+}
+
+.book-des-info {
+  width: 100%;
+  box-sizing: border-box;
+  background-color: #fff;
+  padding: 30rpx;
+}
+
+.label-title {
+  font-size: 28rpx;
+  color: #000;
+  padding: 30rpx;
+}
+
+.book-info {
+  font-size: 28rpx;
+  color: #666;
+  padding: 0 10rpx 10rpx 10rpx;
+}
+
+.des-imgs {
+  width: 100%;
+}
+
+.des-imgs image {
+  width: 100%;
+}
+
+.footer-box {
+  width: 100%;
+  height: 100rpx;
+  background-color: #fff;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  display: flex;
+  box-shadow: 0 0 8rpx 0;
+}
+
+.footer-box .shop-cart-btn {
+  position: relative;
+  width: 150rpx;
+  height: 100%;
+  line-height: 100rpx;
+  text-align: center;
+  padding-top: 26rpx;
+  font-size: 20rpx;
+  color: #acacb7;
+  background: url("https://app.wfuhui.com/images/bookshelf.png") no-repeat center 21rpx;
+  background-size: 44rpx auto;
+}
+
+.footer-box .shop-cart-btn .shop-num {
+  position: absolute;
+  color: #e64340;
+  left: 90rpx;
+  top: -20rpx;
+}
+
+.footer-box .join-shop-cart {
+  text-align: center;
+  height: 100%;
+  line-height: 100rpx;
+  background-color: #ef8203;
+  color: #fff;
+  font-size: 36rpx;
+}
+
+.footer-box .now-buy {
+  text-align: center;
+  height: 100rpx;
+  line-height: 100rpx;
+  background-color: #00bfe0;
+  color: #fff;
+  font-size: 36rpx;
+}
+
+.footer-box .now-appoint {
+  text-align: center;
+  height: 100%;
+  width: 50%;
+  line-height: 100rpx;
+  background-color: #e64340;
+  color: #fff;
+  font-size: 36rpx;
+  border: none;
+  border-radius: 0px;
+}
+
+button[class="now-appoint"]::after {
+  border: 0;
+}
+
+.home-img {
+  width: 60rpx;
+  height: 60rpx;
+  border: solid 2rpx #e64340;
+  border-radius: 90px;
+  padding: 10rpx;
+  position: fixed;
+  top: 20rpx;
+  left: 20rpx;
+  display: flex;
+  z-index: 999999;
+}
+
+.share-img {
+  border-radius: 90rpx;
+  padding: 10rpx;
+  position: fixed;
+  bottom: 150rpx;
+  right: 30rpx;
+  display: flex;
+  z-index: 999999;
+  background-size: 90rpx 90rpx;
+}
+
+.share-img image {
+  width: 90rpx;
+  height: 90rpx;
+}
+
+.footer-box .contact {
+  position: relative;
+  width: 120rpx;
+  height: 100%;
+  flex-direction: column;
+  align-items: center;
+  font-size: 20rpx;
+  color: #008000;
+  box-sizing: border-box;
+  background: url("https://app.wfuhui.com/images/kefu.png") no-repeat center 21rpx;
+  background-size: 55rpx auto;
+}
+
+.book-item {
+  font-size: 30rpx;
+  margin-bottom: 4rpx;
+  flex: 1;
+  overflow: hidden; /*超出部分隐藏*/
+  white-space: nowrap; /*不换行*/
+  text-overflow: ellipsis; /*超出部分文字以...显示*/
+}
+
+.book {
+  background: #fff;
+  margin-bottom: 15rpx;
+  display: flex;
+  padding: 30rpx;
+}
+
+.book .pic {
+  width: 200rpx;
+  height: 250rpx;
+  margin-right: 20rpx;
+}
+
+.book-title {
+  font-size: 32rpx;
+  font-weight: bold;
+  margin-bottom: 5rpx;
+}
+
+.book-title-en {
+  font-size: 32rpx;
+  margin-bottom: 20rpx;
+}
+
+.fx {
+  display: flex;
+}
+
+.stock {
+  align-items: center;
+}
+
+.book-stock {
+  color: #ef8203;
+  font-size: 26rpx;
+}
+
+.user-info {
+  margin-bottom: 20rpx;
+  align-items: center;
+}
+
+.user-info .info {
+  margin-left: 10rpx;
+}
+
+.user-info .nick-name {
+  font-size: 32rpx;
+}
+
+.create-time {
+  font-size: 28rpx;
+  color: #999;
+}
+
+.user-info image {
+  width: 90rpx;
+  height: 90rpx;
+  border-radius: 50%;
+}
+
+.list-item {
+  padding: 15rpx;
+  border-bottom: 1rpx solid #eee;
+}
+
+.content {
+  font-size: 30rpx;
+}
+
+.book .book-info {
+  width: 500rpx;
+}
+
+button::after {
+  border: none;
+}
+
+.player {
+  width: 90rpx;
+  height: 90rpx;
+  position: absolute;
+  top: 220rpx;
+  left: 630rpx;
+}
+
+.evaluate{
+  font-size: 32rpx;
+  color: #00bfe0;
+  padding-left: 10rpx;
+  padding-right: 10rpx;
+}
+
+.empty {
+  height: 300rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.empty .icon {
+  font-size: 100rpx;
+  padding-bottom: 20rpx;
+}
+
+.empty .text {
+  padding-bottom: 40rpx;
+}

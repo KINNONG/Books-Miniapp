@@ -1,0 +1,69 @@
+<!--pages/order/order-detail/index.wxml-->
+<view class='container'>
+  <view class="weui-form-preview">
+    <view class="weui-form-preview__hd">
+      <view class="weui-form-preview__item">
+        <view class="weui-form-preview__label">付款金额</view>
+        <view class="weui-form-preview__value_in-hd">¥{{order.totalAmount}}</view>
+      </view>
+    </view>
+    <view class="weui-form-preview__bd">
+      <view class="weui-form-preview__item">
+        <view class="weui-form-preview__label">订单编号</view>
+        <view class="weui-form-preview__value">{{order.orderNum}}</view>
+      </view>
+      <view class="weui-form-preview__item">
+        <view class="weui-form-preview__label">下单时间</view>
+        <view class="weui-form-preview__value">{{order.createTime}}</view>
+      </view>
+      <view class="weui-form-preview__item">
+        <view class="weui-form-preview__label">订单状态</view>
+        <view class="weui-form-preview__value">
+          <block wx:if="{{order.orderStatus == 0}}">
+            <label class="status-0">已取消</label>
+          </block>
+          <block wx:if="{{order.orderStatus == 1}}">
+            <label class="status-1">代付款</label>
+          </block>
+          <block wx:if="{{order.orderStatus == 2}}">
+            <label class="status-2">代发货</label>
+          </block>
+          <block wx:if="{{order.orderStatus == 3}}">
+            <label class="status-3">代收货</label>
+          </block>
+          <block wx:if="{{order.orderStatus == 4}}">
+            <label class="status-4">已完成</label>
+          </block>
+        </view>
+      </view>
+    </view>
+  </view>
+
+  <view class="weui-panel weui-panel_access">
+    <view class="weui-panel__hd">订单商品</view>
+    <view class="weui-panel__bd">
+      <view class="weui-media-box weui-media-box_appmsg" wx:for="{{order.orderBookList}}" wx:key="index">
+        <view class="weui-media-box__hd weui-media-box__hd_in-appmsg">
+          <image class="weui-media-box__thumb" src="{{item.picUrl}}" />
+        </view>
+        <view class="weui-media-box__bd weui-media-box__bd_in-appmsg">
+          <view class="weui-media-box__title book-name">{{item.bookName}}</view>
+          <view class='weui-flex'>
+            <view class="weui-flex__item price">￥{{item.price}}</view>
+            <view class="buy-num">X{{item.num}}</view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+
+  <view class="weui-panel weui-panel_access">
+    <view class="weui-panel__hd">收货地址</view>
+    <view class="weui-panel__bd">
+      <view class="weui-media-box weui-media-box_text">
+        <view class="weui-media-box__title weui-media-box__title_in-text">{{order.orderShipment.contacts}} {{order.orderShipment.mobile}}</view>
+        <view class="weui-media-box__desc">{{order.orderShipment.address}}</view>
+      </view>
+    </view>
+  </view>
+</view>

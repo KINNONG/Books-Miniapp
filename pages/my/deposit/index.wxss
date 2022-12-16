@@ -1,0 +1,19 @@
+/* pages/deposit-no/index.wxss */
+page{
+  height: 100%;
+}
+
+.contanier .content{
+  padding: 20rpx;
+  background: #fff;
+  height: 100%
+}
+
+.content .title{
+  font-size: 36rpx;
+  font-weight: bold;
+}
+
+.weui-footer_fixed-bottom{
+  padding: 20rpx;
+}

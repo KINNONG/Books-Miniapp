@@ -1,0 +1,13 @@
+<view class='container'>
+  <view class="book-container">
+    <view class="book-box" wx:for="{{bookList}}" wx:key="index" bindtap="toDetailsTap" data-id="{{item.bookId}}">
+      <view class="img-box">
+        <image src="{{item.picUrl}}" class="image" />
+      </view>
+      <view>
+        <view class="book-title">{{item.bookName}}</view>
+        <view class="book-price">¥ {{item.price}}</view>
+      </view>
+    </view>
+  </view>
+</view>

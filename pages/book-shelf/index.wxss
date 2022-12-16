@@ -1,0 +1,114 @@
+/* pages/bookshelf/index.wxss */
+
+page {
+  background: #f7f7f7;
+  font-size: 28rpx;
+}
+
+.book-no {
+  text-align: center;
+  padding: 40rpx;
+}
+
+.book-no image {
+  width: 100rpx;
+  height: 120rpx;
+  margin-bottom: 20rpx
+}
+
+.book-no button {
+  border-color: #00bfe0;
+  color: #00bfe0;
+  font-weight: normal;
+}
+
+.title {
+  padding: 16rpx;
+  font-size: 28rpx;
+}
+
+.book-list {
+  align-items: center;
+  padding: 16rpx;
+  background: #fff;
+  border-bottom: 1rpx solid #f7f7f7;
+}
+
+.book-list .book-img {
+  width: 140rpx;
+  height: 160rpx;
+  margin-right: 10rpx;
+}
+
+.book-list .icon {
+  width: 40rpx;
+  height: 40rpx;
+  margin-right: 10rpx;
+  align-items: center;
+}
+
+.weui-footer_fixed-bottom {
+  bottom: 0;
+  font-size: 28rpx;
+  height: 100rpx;
+  line-height: 100rpx;
+  background: #fff;
+}
+
+.weui-footer_fixed-bottom .borrow {
+  background: #00bfe0;
+  color: #fff;
+  border-radius: 0;
+  line-height: 100rpx;
+  font-size: 32rpx;
+  width: 220rpx;
+}
+
+button::after {
+  border: none;
+}
+
+.borrow-num {
+  margin-right: 10rpx;
+  color: #000;
+  font-size: 32rpx;
+}
+
+.label {
+  color: #8a8a8a;
+  margin-bottom: 20rpx;
+  font-size: 30rpx;
+}
+
+checkbox .wx-checkbox-input {
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+}
+
+checkbox .wx-checkbox-input.wx-checkbox-input-checked {
+  border-color: #00bfe0 !important;
+  background: #00bfe0 !important;
+}
+
+checkbox .wx-checkbox-input.wx-checkbox-input-checked::before {
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  line-height: 20px;
+  text-align: center;
+  font-size: 15px;
+  color: #fff;
+  background: transparent;
+  transform: translate(-50%, -50%) scale(1);
+  -webkit-transform: translate(-50%, -50%) scale(1);
+}
+
+.book-name{
+  font-size: 32rpx;
+}
+
+.author{
+  font-size: 28rpx;
+  color: #555;
+}

@@ -1,0 +1,38 @@
+/**app.wxss**/
+@import 'style/weui.wxss';
+/**根目录 app.wxss 文件**/
+@import "colorui/main.wxss";
+@import "colorui/icon.wxss";
+/* // 若需要使用微动画，请引入 animation.wxss */
+@import "colorui/animation.wxss";
+/* // 若使用暗色模式，请引入 dark.wxss，注意，当前版本暗色模式随系统切换，目前不支持手动切换 */
+@import "colorui/dark.wxss";
+
+.container {
+  height: 100%;
+  background: #f7f7f7;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+}
+
+.block {
+  background: #fff;
+  margin-bottom: 12rpx;
+}
+
+.block .title {
+  font-size: 32rpx;
+  font-weight: bold;
+  padding: 20rpx;
+}
+
+.block .content{
+  font-size: 30rpx;
+  color: #666;
+  padding: 0 16rpx 16rpx 16rpx;
+}
+
+.price{
+  color: #e64340;
+}

@@ -1,0 +1,42 @@
+.book-container{
+  display: flex;
+  justify-content: space-between;  
+  flex-wrap:wrap;
+  box-sizing: content-box;
+  padding: 24rpx;
+}
+.book-box{
+  height: 300rpx;
+  background-color: #fff;
+  overflow: hidden;
+  margin-bottom: 24rpx;
+  display: flex;
+  width: 100%;
+}
+.book-box .img-box{
+  width: 300rpx;
+  height: 300rpx;
+  overflow: hidden;
+}
+.book-box .img-box image{
+   width: 300rpx;
+   height: 300rpx;
+}
+.book-box .book-title{
+  width: 280rpx;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  font-size: 24rpx;
+  padding: 24rpx 0 0rpx 0;
+  color:#000;
+  margin-left: 24rpx;
+}
+.book-box .book-price{
+  width: 280rpx;
+  overflow: hidden;
+  font-size: 24rpx;
+  padding: 24rpx 0;
+  color:#e64340;
+  margin-left: 24rpx;
+}

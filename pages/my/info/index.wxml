@@ -1,0 +1,29 @@
+<!--pages/member-info/index.wxml-->
+
+<image src='/images/bg.png' mode='widthFix' class='bg-img-new'></image>
+<scroll-view>
+  <view class="UCenter-bg margin-top-xl">
+    <image src="{{memberInfo.avatarUrl}}" class="cu-avatar xl round"></image>
+    <view class="userinfo-nickname text-black">{{ memberInfo.nickname }}</view>
+  </view>
+  <view class='container'>
+    <view class='basic'>
+      <view class='weui-flex item'>
+        <view class="label title">基本信息</view>
+        <view class='value edit' bindtap='edit'>编辑</view>
+      </view>
+      <view class='weui-flex item'>
+        <view class='label'>姓名</view>
+        <view class='value'>{{memberInfo.realName}}</view>
+      </view>
+      <view class='weui-flex item'>
+        <view class='label'>联系电话</view>
+        <view class='value'>{{memberInfo.mobile}}</view>
+      </view>
+      <view class='weui-flex item'>
+        <view class='label'>性别</view>
+        <view class='value'>{{memberInfo.gender == 1 ? '男' : '女'}}</view>
+      </view>
+    </view>
+  </view>
+</scroll-view>

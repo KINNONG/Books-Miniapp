@@ -1,0 +1,48 @@
+<!--pages/confirm-order/index.wxml-->
+<view class="container">
+  <form bindsubmit='confirmOrder'>
+    <view class='book-info' hidden="true">
+      <radio-group bindchange="distributionChange">
+        <label class="radio" wx:for="{{distribution}}" wx:key="index">
+          <radio value="{{item.name}}" checked="{{item.checked}}"></radio>{{item.value}}
+        </label>
+      </radio-group>
+    </view>
+
+    <view class='book-info' wx:if="{{distributionIndex == 1  && !orderShipment}}" bindtap='selectAddress'>
+      <view>请选择收货地址</view>
+    </view>
+
+    <view class='book-info' wx:if="{{distributionIndex == 1 && orderShipment}}" bindtap='selectAddress'>
+      <view>{{orderShipment.contacts}} {{orderShipment.mobile}}</view>
+      <view class='address'>{{orderShipment.cityName}}{{orderShipment.districtName}}{{orderShipment.address}}</view>
+    </view>
+
+    <view class='book-list'>
+      <view class="book" wx:for="{{bookList}}" wx:key="index">
+        <image mode="scaleToFill" src='{{item.picUrl}}'></image>
+        <view>
+          <view class="book-title">{{item.bookName}}</view>
+          <view class="book-item">{{item.author}}</view>
+          <view class='book-item'>x{{item.num}}</view>
+        </view>
+      </view>
+    </view>
+    <view class='book-info' wx:if="{{distributionIndex == 1}}">
+      <view>运费：8元</view>
+    </view>
+
+    <view class='book-info'>
+      <textarea name="remark" placeholder='备注'></textarea>
+    </view>
+
+    <view class="footer-box">
+
+      <view class='weui-flex foot-buy'>
+        <view class='weui-flex__item total-amount'></view>
+        <button class="now-buy" form-type='submit'>提交订单</button>
+      </view>
+
+    </view>
+  </form>
+</view>

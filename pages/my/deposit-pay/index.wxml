@@ -1,0 +1,31 @@
+<!--pages/deposit-pay/index.wxml-->
+<view class='container'>
+  <view class='weui-flex money'>
+    <view>
+      押金
+    </view>
+
+    <view>
+      ￥{{lendPlan.deposit}}
+    </view>
+  </view>
+
+  <view class='info'>
+    <view class='title'>
+      押金说明
+    </view>
+
+    <text>
+      - 仅支持微信支付
+      - 押金可随时退回
+      - 借阅费不在押金中扣除
+    </text>
+  </view>
+
+  <view class='weui-footer weui-footer_fixed-bottom'>
+    <view class='weui-flex foot'>
+      <view class='total'>总计￥{{lendPlan.deposit}}</view>
+      <button bindtap='pay'>立即支付</button>
+    </view>
+  </view>
+</view>

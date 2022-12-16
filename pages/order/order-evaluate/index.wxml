@@ -1,0 +1,15 @@
+<!--pages/evaluation/index.wxml-->
+<view class="container">
+  <form bindsubmit='submitComment'>
+    <view class="weui-cells weui-cells_after-title">
+      <view class="weui-cell">
+        <view class="weui-cell__bd">
+          <textarea name="content" class="weui-textarea" placeholder="请输入评价内容" style="height: 5.3em" />
+        </view>
+      </view>
+    </view>
+    <view class="weui-btn-area">
+      <button type="primary" class="weui-btn" form-type="submit">保存</button>
+    </view>
+  </form>
+</view>

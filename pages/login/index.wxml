@@ -1,0 +1,34 @@
+<import src="/pages/template/common/copyright.wxml" />
+
+<cu-custom bgColor="bg-gradual-blue" isBack="{{true}}">
+  <view slot="backText"></view>
+  <view slot="content">用户登录</view>
+</cu-custom>
+
+<scroll-view scroll-y class="scrollPage">
+  <form bindsubmit="formSubmit">
+    <view class="cu-form-group margin-top">
+      <view class="title">用户名</view>
+      <input placeholder="请输入用户名"></input>
+    </view>
+
+    <view class="cu-form-group">
+      <view class="title">密码</view>
+      <input type="safe-password" password="true" placeholder="请输入密码"></input>
+    </view>
+
+    <!-- 按钮 -->
+    <view class="padding flex flex-direction">
+      <button class="cu-btn bg-green lg" type="primary" formType="submit">登录</button>
+      <button class="cu-btn bg-grey margin-tb lg" type="default" bindtap="reg">注册</button>
+      <button class="cu-btn bg-red lg" type="warn" bindtap="getUserInfo">授权登录</button>
+    </view>
+    <view class="weui-btn-area">
+    </view>
+    <view class="weui-btn-area">
+    </view>
+  </form>
+</scroll-view>
+
+<!-- 页脚 -->
+<template is="copyright"></template>

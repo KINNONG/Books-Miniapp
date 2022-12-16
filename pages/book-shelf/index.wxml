@@ -1,0 +1,55 @@
+<cu-custom bgColor="bg-gradual-blue" isBack="{{true}}">
+  <view slot="backText"></view>
+  <view slot="content">图书详情</view>
+</cu-custom>
+
+<view class='container'>
+  <view hidden='{{bookList.length != 0}}' class='book-no'>
+    <image src='/images/nav/bookshelf-off.png'></image>
+    <view class="label">
+      书架空空如也～
+    </view>
+    <button plain='true' size='mini' bindtap='goShop'>去逛逛</button>
+  </view>
+
+  <view hidden='{{bookList.length == 0}}'>
+    <view class="cu-bar bg-white">
+      <view class="action">
+        <text class="cuIcon-titles text-blue"></text>
+        <text>我的书架</text>
+      </view>
+    </view>
+    <checkbox-group bindchange="checkboxChange">
+      <view class="cu-card article flex" wx:for="{{bookList}}" wx:key="index">
+        <view class="cu-item">
+          <view class="content flex align-center">
+            <checkbox value='{{item.id}}'></checkbox>
+            <image class='padding-lr' src='{{item.picUrl}}' mode="aspectFill"></image>
+            <view class="desc">
+              <view class='flex flex-direction'>
+                <view class="book-name">{{item.bookName}}</view>
+                <view class="author">{{item.author}}</view>
+              </view>
+            </view>
+            <view data-id='{{item.id}}' data-index='{{index}}' class=' text-xxl text-blue ' bindtap='delBook'>
+              <text class="cuIcon-roundclose"></text>
+            </view>
+          </view>
+        </view>
+      </view>
+    </checkbox-group>
+    <view class="weui-footer weui-footer_fixed-bottom">
+      <view class='weui-flex'>
+        <view class='weui-flex__item'>
+
+        </view>
+        <view class='weui-flex'>
+          <view class='borrow-num'>合计{{bookNum}}本</view>
+
+          <button class='borrow' size='mini' bindtap='borrow'>去借阅</button>
+        </view>
+      </view>
+    </view>
+  </view>
+
+</view>

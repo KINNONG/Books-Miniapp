@@ -1,0 +1,6 @@
+<!--pages/order/order-pay/index.wxml-->
+<view class="container">
+<image src="/images/pay.jpg" mode="widthFix"></image>
+<view class="price">￥{{order.totalAmount}}</view>
+<button type="primary" bindtap="payOrder">确认支付</button>
+</view>

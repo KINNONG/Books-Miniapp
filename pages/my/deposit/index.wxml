@@ -1,0 +1,16 @@
+<!--pages/deposit/index.wxml-->
+<cu-custom bgColor="bg-gradual-green" isBack="{{true}}">
+  <view slot="backText"></view>
+  <view slot="content">我的押金</view>
+</cu-custom>
+
+<view class='container padding'>
+  <view class='content'>
+    <view class='title'>{{title}}</view>
+
+    <view class='title'>{{subTitle}}</view>
+  </view>
+  <view class='weui-footer weui-footer_fixed-bottom'>
+    <button type='primary' bindtap='doIt'>{{buttonTxt}}</button>
+  </view>
+</view>

@@ -1,0 +1,102 @@
+/* pages/member-info/index.wxss */
+page{
+  height: 100%
+}
+
+.item{
+  border-bottom: 1rpx solid #eee;
+  padding: 24rpx;
+  font-size: 32rpx;
+  background: #fff;
+}
+
+.item .label{
+  flex: 1
+}
+
+.userinfo{
+  background: #fff;
+  text-align: center;
+  padding: 20rpx;
+}
+
+.userinfo-avatar {
+  width: 150rpx;
+  height: 150rpx;
+  border-radius: 50%;
+}
+
+.statistics{
+  background: #fff;
+  margin-bottom: 10rpx;
+  align-items: center
+}
+
+.basic{
+  background: #fff
+}
+
+.basic .title{
+  font-size: 36rpx;
+  flex: 1
+}
+
+.grid{
+  font-size: 26rpx;
+  color: #888888;
+  padding: 40rpx 0rpx 40rpx 0rpx;
+  text-align: center;
+}
+
+.line{
+  width: 2rpx;
+  background: #eee;
+  height: 100rpx
+}
+
+.grid:last-child{
+  border-right: none
+}
+
+.basic .title{
+  font-weight: bold
+}
+
+.basic .edit{
+  color: #00BFE0
+}
+
+.UCenter-bg {
+  /* background-image: url(https://image.weilanwl.com/color2.0/index.jpg); */
+  background-size: cover;
+  height: 430rpx;
+  display: flex;
+  justify-content: center;
+  padding-top: 40rpx;
+  overflow: hidden;
+  position: relative;
+  flex-direction: column;
+  align-items: center;
+  color: #fff;
+  font-weight: 300;
+  text-shadow: 0 0 3px rgba(0, 0, 0, 0.3);
+}
+
+.UCenter-bg .text {
+  opacity: 0.8;
+}
+
+.png {
+  width: 200rpx;
+  height: 200rpx;
+}
+
+.UCenter-bg .gif-wave {
+  position: absolute;
+  width: 100%;
+  bottom: 0;
+  left: 0;
+  z-index: 99;
+  mix-blend-mode: screen;
+  height: 100rpx;
+}

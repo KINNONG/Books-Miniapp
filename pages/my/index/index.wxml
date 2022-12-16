@@ -1,0 +1,92 @@
+<!-- 导入页脚 -->
+<import src="/pages/template/common/copyright.wxml" />
+
+<!-- 背景图 -->
+<image src='/images/bg.png' mode='widthFix' class='bg-img-new'></image>
+
+<!-- 页面 -->
+<scroll-view scroll-y class="scrollPage">
+  <!-- logo&信息 -->
+  <view class="UCenter-bg margin-top-lg">
+    <image src="{{member.avatarUrl}}" class="cu-avatar xl round"></image>
+    <view class="text-xl padding-top text-orange text-blod">
+      <!-- 用户信息 -->
+      <view class="nickname" wx:if="{{member}}">
+        <view class="userinfo-nickname">{{ member.nickname }}</view>
+        <text class="text-grey text-sm">会员</text>
+      </view>
+      <view class="nickname" bindtap="login" wx:if="{{!member}}">
+        <button class="cu-btn bg-blue margin-top-sm lg">点击登录</button>
+      </view>
+    </view>
+  </view>
+  <view class="margin margin-top-sm">
+    <view class="padding-tb flex text-center bg-white shadow radius-lg">
+      <view class="flex flex-sub flex-direction solid-right text-blue" bindtap="toPage" data-url="/pages/order/order-list/index">
+        <view class="text-xxl">{{orderBookNum}}</view>
+        <view class="margin-top-sm">
+          <text class="cuIcon-goodsfavor"></text> 借阅
+        </view>
+      </view>
+      <view class="flex flex-sub flex-direction solid-right text-green" bindtap="toPage" data-url="/pages/my/deposit/index">
+        <view class="text-xxl">{{deposit}}</view>
+        <view class="margin-top-sm">
+          <text class="cuIcon-moneybag"></text> 押金
+        </view>
+      </view>
+    </view>
+  </view>
+
+  <view class="cu-list menu card-menu sm-border margin-top margin-bottom-xl shadow radius-lg">
+    <view class="cu-item arrow" bindtap="toPage" data-url="/pages/my/info/index">
+      <view class="content">
+        <text class="cuIcon-profile text-blue"></text>
+        <text>我的信息</text>
+      </view>
+    </view>
+    <view class="cu-item arrow" bindtap="toPage" data-url="/pages/my/appreciate/appreciate">
+      <view class="content">
+        <text class="cuIcon-wefill text-red"></text>
+        <text>致谢</text>
+      </view>
+    </view>
+    <view class="cu-item" bindtap="CopyText" data-link="https://github.com/XiaokangLei/ColorUI-GA">
+      <view class="content">
+        <text class="cuIcon-github text-black"></text>
+        <text>源码开源</text>
+      </view>
+      <view class="cuIcon-copy text-blue"></view>
+    </view>
+    <view class="cu-item" bindtap="CopyText" data-link="https://one.x-artspace.cn/ColorUI-GA-Docs">
+      <view class="content">
+        <text class="cuIcon-link text-green"></text>
+        <text>文档链接</text>
+      </view>
+      <view class="cuIcon-copy text-blue"></view>
+    </view>
+  </view>
+
+  <view class="cu-list menu card-menu sm-border margin-top-sm shadow-lg">
+    <!-- 联系作者 -->
+    <view class="cu-item">
+      <button class='cu-btn content' open-type='contact'>
+        <text class='cuIcon-service text-orange text-xl'></text>
+        <text class='text-l text-black'>联系作者</text>
+      </button>
+    </view>
+    <view class="cu-item">
+      <button class='cu-btn content' open-type='feedback'>
+        <text class='cuIcon-write text-cyan text-xl'></text>
+        <text class='text-l text-black'>意见反馈</text>
+      </button>
+    </view>
+    <!-- 退出登录 -->
+    <view wx:if="{{member}}">
+      <button class="cu-btn bg-red margin-tb-xl lg" style="width: 100%;" bindtap="logout">退出登录</button>
+    </view>
+  </view>
+
+
+</scroll-view>
+<!-- 页脚 -->
+<template is="copyright"></template>

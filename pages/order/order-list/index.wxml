@@ -1,0 +1,114 @@
+<wxs module="util" src="../../../utils/util.wxs"></wxs>
+<import src="/pages/template/common/copyright.wxml" />
+
+<cu-custom bgColor="bg-gradual-blue" isBack="{{true}}">
+  <view slot="backText"></view>
+  <view slot="content">借阅列表</view>
+</cu-custom>
+
+<scroll-view scroll-y class="scrollPage">
+  <scroll-view scroll-x class="bg-white nav ">
+    <view class="flex text-center">
+      <view class="cu-item flex-sub {{index==activeIndex?'text-blue cur':''}}" wx:for="{{tabs}}" wx:key="index">
+        <view id="{{index}}" class="{{index==activeIndex?'text-blue cur':''}}" bindtap="tabClick">
+          <view>{{item}}</view>
+        </view>
+      </view>
+    </view>
+  </scroll-view>
+
+  <!-- 借阅列表信息 -->
+  <view>
+    <view class="empty" hidden="{{orderList.length != 0}}">
+      <text class="cuIcon-searchlist text-gray icon"></text>
+      <view class="text-gray text">暂无数据</view>
+    </view>
+    <view hidden="{{orderList.length > 0 ? false : true}}" wx:for="{{orderList}}" wx:key="index">
+      <view class="cu-card article margin">
+        <view class="cu-list menu shadow">
+          <view class="cu-item solid-bottom-blue" style="border-bottom: 1px solid #ddd;">
+            <view class="flex flex-direction">
+              <view>
+                <text class="cuIcon-4 text-red"></text>
+                <text class="text-grey">订单编号：{{item.orderNumber}}</text>
+              </view>
+              <view>
+                <text class="cuIcon-4 text-red"></text>
+                <text class="text-grey">订单时间：{{util.formatTimestamp(item.createTime)}}</text>
+              </view>
+            </view>
+
+            <view class="action">
+              <view class="cu-tag round bg-{{item.orderStatus == 2?'green':'red'}} light">
+                {{item.orderStatus == 2?'已归还':"借阅中"}}
+              </view>
+            </view>
+          </view>
+
+          <view class="cu-item">
+            <view class="flex p-xs padding-sm" style="width: 100%;">
+              <view class="flex-treble margin-x">
+                <view class="grid col-6 grid-square">
+                  <view class="bg-img" wx:for="{{item.orderBookList}}" wx:key="index" style="width: 160rpx;height:230rpx;background-image: url({{item.picUrl}});" mode='aspectFit' />
+                </view>
+              </view>
+              <view class="flex flex-sub justify-center align-center light padding-sm margin-xs radius">
+                共{{item.orderBookList.length}}本
+              </view>
+            </view>
+          </view>
+          <view class="cu-item" >
+            <view class="flex justify-between align-center" style="width: 100%;">
+              <view class="syt">借阅时间：{{item.startDate}}~{{item.endDate}}</view>
+              <view>
+                <button class="flex justify-end" size="mini" plain="true" wx:if="{{item.orderStatus == 2}}" data-id='{{item.id}}' bindtap='evaluate'>去评价</button>
+              </view>
+            </view>
+          </view>
+
+        </view>
+      </view>
+    </view>
+  </view>
+</scroll-view>
+<!-- 页脚 -->
+<template is="copyright"></template>
+
+<!-- <view class="container">
+  <view class="weui-tab">
+    <view class="weui-navbar">
+      <block wx:for="{{tabs}}" wx:key="index">
+        <view id="{{index}}" class="weui-navbar__item {{activeIndex == index ? 'weui-bar__item_on' : ''}}" bindtap="tabClick">
+          <view class="weui-navbar__title">{{item}}</view>
+        </view>
+      </block>
+      <view class="weui-navbar__slider" style="left: {{sliderLeft}}px; transform: translateX({{sliderOffset}}px); -webkit-transform: translateX({{sliderOffset}}px);"></view>
+    </view>
+
+    <view class="weui-tab__panel">
+      <view class="weui-tab__content">
+        <view class="book-no" hidden="{{orderList.length != 0}}">
+          <image src='/images/no-order.png'></image>
+          <view class="label">
+            暂无订单
+          </view>
+        </view>
+        <view class="order-list" hidden="{{orderList.length > 0 ? false : true}}" wx:for="{{orderList}}" wx:key="index">
+          <view class='order-time'>订单编号：{{item.orderNumber}}</view>
+          <view class='order-time'>下单时间：{{util.formatTimestamp(item.createTime)}}</view>
+          <view class="weui-flex book-info" wx:for="{{item.orderBookList}}" wx:key="index">
+            <image src="{{item.picUrl}}" class="image" mode='scaleToFill' />
+            <view class="info">
+              <view class="book-title">{{item.bookName}}</view>
+              <view class="book-author">{{item.author}}</view>
+            </view>
+          </view>
+          <view class="weui-flex option">
+            <view class="syt">{{item.startDate}}~{{item.endDate}}</view>
+            <button class="btn" size="mini" plain="true" wx:if="{{item.orderStatus == 2}}" data-id='{{item.id}}' bindtap='evaluate'>去评价</button>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+</view> -->
