@@ -21,6 +21,13 @@ Page({
     this.setData({
       member: null
     })
+    wx.showLoading({
+      title: '退出中',
+    })
+    wx.redirectTo({
+      url: '/pages/my/index/index',
+    })
+    wx.hideLoading()
   },
 
   tabNav: function (e) {

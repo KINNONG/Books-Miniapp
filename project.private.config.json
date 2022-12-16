@@ -63,6 +63,13 @@
           "query": "",
           "launchMode": "default",
           "scene": null
+        },
+        {
+          "name": "",
+          "pathName": "pages/book/book-search/index",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
         }
       ]
     }

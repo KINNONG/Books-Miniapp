@@ -1,4 +1,10 @@
 <!--pages/deposit-pay/index.wxml-->
+
+<cu-custom bgColor="bg-gradual-blue" isBack="{{true}}">
+  <!-- <view slot="backText"></view> -->
+  <view slot="content">支付押金</view>
+</cu-custom>
+
 <view class='container'>
   <view class='weui-flex money'>
     <view>

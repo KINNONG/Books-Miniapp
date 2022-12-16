@@ -147,13 +147,21 @@ Page({
       },
       data: order,
       success: (res) => {
+        console.log(res.data.msg);
         if (res.data.code != 0) {
           wx.showModal({
             title: '提示',
-            content: res.data.msg,
-            showCancel: false,
+            content: res.data.msg+"，是否前往交押金",
+            showCancel: true,
             success: function(e) {
-
+              if(e.confirm){
+                console.log("用户点击了确定");
+                wx.navigateTo({
+                  url: '/pages/my/deposit/index',
+                })
+              }else if(e.cancel){
+                console.log("用户点击取消");
+              }
             }
           })
           return;

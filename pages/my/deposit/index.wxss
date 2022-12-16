@@ -1,6 +1,6 @@
 /* pages/deposit-no/index.wxss */
 page{
-  height: 100%;
+  height: 90%;
 }
 
 .contanier .content{
